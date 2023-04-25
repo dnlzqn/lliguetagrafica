@@ -1,0 +1,396 @@
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <title>Lligueta gràfica</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <section id="section1" class="fullscreen section1 active">
+    <div class="titol">
+        <h3>Lligueta gràfica</h3>
+        <div class="nav">
+            <h1>Quarts de final 1</h1>
+            <button data-target="#section2">→</button>
+        </div>
+    </div>
+    <p>Crea un disseny de samarreta amb una frase motivadora</p>
+    <div class="countdown">
+    <input type="checkbox" id="equip1"><label for="equip1" contenteditable>equip1</label>
+      <div class="timer">10:00</div>
+    <label for="equip2" contenteditable>equip2</label><input type="checkbox" id="equip2">
+    </div>
+  </section>
+
+  <section id="section2" class="fullscreen section2">
+    <div class="titol">
+        <h3>Lligueta gràfica</h3>
+        <div class="nav">
+            <button data-target="#section1">←</button>
+            <h1>Quarts de final 2</h1>
+            <button data-target="#section3">→</button>
+        </div>
+    </div>
+    <p>Crea una imatge minimalista d'un paisatge amb només tres colors</p>
+    <div class="countdown">
+    <input type="checkbox" id="equip3"><label for="equip3" contenteditable>equip3</label>
+      <div class="timer">10:00</div>
+    <label for="equip4" contenteditable>equip4</label><input type="checkbox" id="equip4">
+    </div>
+  </section>
+
+  <section id="section3" class="fullscreen section3">
+    <div class="titol">
+    <h3>Lligueta gràfica</h3>
+    <div class="nav">
+        <button data-target="#section2">←</button>
+        <h1>Quarts de final 3</h1>
+        <button data-target="#section4">→</button>
+    </div>
+</div>
+    <p>Genera un animal mamífer utilitzant només elements tipogràfics</p>
+    <div class="countdown">
+    <input type="checkbox" id="equip5"><label for="equip5" contenteditable>equip5</label>
+      <div class="timer">10:00</div>
+    <label for="equip6" contenteditable>equip6</label><input type="checkbox" id="equip6">
+    </div>
+  </section>
+
+  <section id="section4" class="fullscreen section4">
+    <div class="titol">
+    <h3>Lligueta gràfica</h3>
+    <div class="nav">
+        <button data-target="#section3">←</button>
+        <h1>Quarts de final 4</h1>
+        <button data-target="#section5">→</button>
+    </div>
+</div>
+    <p>Sintetitza gràficament la cara d'un dels teus contrincants</p>
+    <div class="countdown">
+    <input type="checkbox" id="equip7"><label for="equip7" contenteditable>equip7</label>
+      <div class="timer">10:00</div>
+    <label for="equip8" contenteditable>equip8</label><input type="checkbox" id="equip8">
+    </div>
+  </section>
+
+  <section id="section5" class="fullscreen section5">
+    <div class="titol">
+    <h3>Lligueta gràfica</h3>
+    <div class="nav">
+        <button data-target="#section4">←</button>
+        <h1>Semifinal 1</h1>
+        <button data-target="#section6">→</button>
+    </div>
+</div>
+    <p>Sintetitza gràficament la cara d'un dels teus profes "favorits"</p>
+    <div class="countdown">
+    <input type="checkbox" id="semifinal1a"><label for="semifinal1a" contenteditable></label>
+      <div class="timer">10:00</div>
+    <label for="semifinal1b" contenteditable></label><input type="checkbox" id="semifinal1b">
+    </div>
+  </section>
+
+  <section id="section6" class="fullscreen section6">
+    <div class="titol">
+    <h3>Lligueta gràfica</h3>
+    <div class="nav">
+        <button data-target="#section5">←</button>
+        <h1>Semifinal 2</h1>
+        <button data-target="#section7">→</button>
+    </div>
+</div>
+    <p>Dissenya la senyalització d'un lavabo inclusiu</p>
+    <div class="countdown">
+    <input type="checkbox" id="semifinal2a"><label for="semifinal2a" contenteditable></label>
+      <div class="timer">10:00</div>
+    <label for="semifinal2b" contenteditable></label><input type="checkbox" id="semifinal2b">
+    </div>
+  </section>
+
+  <section id="section7" class="fullscreen section7">
+    <div class="titol">
+    <h3>Lligueta gràfica</h3>
+    <div class="nav">
+        <button data-target="#section6">←</button>
+        <h1>Final</h1>
+    </div>
+</div>
+    <p>Crea un cartell protesta contra ...</p>
+    <div class="countdown">
+    <input type="checkbox" id="final1"><label for="final1" contenteditable>final1</label>
+      <div class="timer">10:00</div>
+    <label for="final2" contenteditable>final2</label><input type="checkbox" id="final2">
+    </div>
+  </section>
+
+  <script>
+
+const equip1Checkbox = document.querySelector('#equip1');
+const equip1Label = document.querySelector('label[for="equip1"]');
+const equip2Checkbox = document.querySelector('#equip2');
+const equip2Label = document.querySelector('label[for="equip2"]');
+const semifinal1aLabel = document.querySelector('label[for="semifinal1a"]');
+let lastChecked1 = null;
+
+equip1Checkbox.addEventListener('change', () => {
+  if (equip1Checkbox.checked) {
+    if (lastChecked1 && lastChecked1 !== equip1Checkbox) {
+      lastChecked1.checked = false;
+    }
+    lastChecked1 = equip1Checkbox;
+    semifinal1aLabel.textContent = equip1Label.textContent;
+  } else {
+    semifinal1aLabel.textContent = '';
+  }
+});
+
+equip2Checkbox.addEventListener('change', () => {
+  if (equip2Checkbox.checked) {
+    if (lastChecked1 && lastChecked1 !== equip2Checkbox) {
+      lastChecked1.checked = false;
+    }
+    lastChecked1 = equip2Checkbox;
+    semifinal1aLabel.textContent = equip2Label.textContent;
+  } else {
+    semifinal1aLabel.textContent = '';
+  }
+});
+
+
+//cuartos de final 2
+
+const equip3Checkbox = document.querySelector('#equip3');
+const equip3Label = document.querySelector('label[for="equip3"]');
+const equip4Checkbox = document.querySelector('#equip4');
+const equip4Label = document.querySelector('label[for="equip4"]');
+const semifinal1bLabel = document.querySelector('label[for="semifinal1b"]');
+let lastChecked2 = null;
+
+equip3Checkbox.addEventListener('change', () => {
+  if (equip3Checkbox.checked) {
+    if (lastChecked2 && lastChecked2 !== equip3Checkbox) {
+      lastChecked2.checked = false;
+    }
+    lastChecked2 = equip3Checkbox;
+    semifinal1bLabel.textContent = equip3Label.textContent;
+  } else {
+    semifinal1bLabel.textContent = '';
+  }
+});
+
+equip4Checkbox.addEventListener('change', () => {
+  if (equip4Checkbox.checked) {
+    if (lastChecked2 && lastChecked2 !== equip4Checkbox) {
+      lastChecked2.checked = false;
+    }
+    lastChecked2 = equip4Checkbox;
+    semifinal1bLabel.textContent = equip4Label.textContent;
+  } else {
+    semifinal1bLabel.textContent = '';
+  }
+});
+
+//cuartos de final 3
+
+const equip5Checkbox = document.querySelector('#equip5');
+const equip5Label = document.querySelector('label[for="equip5"]');
+const equip6Checkbox = document.querySelector('#equip6');
+const equip6Label = document.querySelector('label[for="equip6"]');
+const semifinal2aLabel = document.querySelector('label[for="semifinal2a"]');
+let lastChecked3 = null;
+
+equip5Checkbox.addEventListener('change', () => {
+  if (equip5Checkbox.checked) {
+    if (lastChecked3 && lastChecked3 !== equip5Checkbox) {
+      lastChecked3.checked = false;
+    }
+    lastChecked3 = equip5Checkbox;
+    semifinal2aLabel.textContent = equip5Label.textContent;
+  } else {
+    semifinal2aLabel.textContent = '';
+  }
+});
+
+equip6Checkbox.addEventListener('change', () => {
+  if (equip6Checkbox.checked) {
+    if (lastChecked3 && lastChecked3 !== equip6Checkbox) {
+      lastChecked3.checked = false;
+    }
+    lastChecked3 = equip6Checkbox;
+    semifinal2aLabel.textContent = equip6Label.textContent;
+  } else {
+    semifinal2aLabel.textContent = '';
+  }
+});
+
+//cuartos de final 4
+
+const equip7Checkbox = document.querySelector('#equip7');
+const equip7Label = document.querySelector('label[for="equip7"]');
+const equip8Checkbox = document.querySelector('#equip8');
+const equip8Label = document.querySelector('label[for="equip8"]');
+const semifinal2bLabel = document.querySelector('label[for="semifinal2b"]');
+let lastChecked4 = null;
+
+equip7Checkbox.addEventListener('change', () => {
+  if (equip7Checkbox.checked) {
+    if (lastChecked4 && lastChecked4 !== equip7Checkbox) {
+      lastChecked4.checked = false;
+    }
+    lastChecked4 = equip7Checkbox;
+    semifinal2bLabel.textContent = equip7Label.textContent;
+  } else {
+    semifinal2bLabel.textContent = '';
+  }
+});
+
+equip8Checkbox.addEventListener('change', () => {
+  if (equip8Checkbox.checked) {
+    if (lastChecked4 && lastChecked4 !== equip8Checkbox) {
+      lastChecked4.checked = false;
+    }
+    lastChecked4 = equip8Checkbox;
+    semifinal2bLabel.textContent = equip8Label.textContent;
+  } else {
+    semifinal2bLabel.textContent = '';
+  }
+});
+
+
+//semifinal1
+
+const smf1a_Checkbox = document.querySelector('#semifinal1a');
+const smf1a_Label = document.querySelector('label[for="semifinal1a"]');
+const smf1b_Checkbox = document.querySelector('#semifinal1b');
+const smf1b_Label = document.querySelector('label[for="semifinal1b"]');
+const final1Label = document.querySelector('label[for="final1"]');
+let lastChecked5 = null;
+
+smf1a_Checkbox.addEventListener('change', () => {
+  if (smf1a_Checkbox.checked) {
+    if (lastChecked5 && lastChecked5 !== smf1a_Checkbox) {
+      lastChecked5.checked = false;
+    }
+    lastChecked5 = smf1a_Checkbox;
+    final1Label.textContent = smf1a_Label.textContent;
+  } else {
+    final1Label.textContent = '';
+  }
+});
+
+smf1b_Checkbox.addEventListener('change', () => {
+  if (smf1b_Checkbox.checked) {
+    if (lastChecked5 && lastChecked5 !== smf1b_Checkbox) {
+      lastChecked5.checked = false;
+    }
+    lastChecked5 = smf1b_Checkbox;
+    final1Label.textContent = smf1b_Label.textContent;
+  } else {
+    final1Label.textContent = '';
+  }
+});
+
+//semifinal2
+
+const smf2a_Checkbox = document.querySelector('#semifinal2a');
+const smf2a_Label = document.querySelector('label[for="semifinal2a"]');
+const smf2b_Checkbox = document.querySelector('#semifinal2b');
+const smf2b_Label = document.querySelector('label[for="semifinal2b"]');
+const final2Label = document.querySelector('label[for="final2"]');
+let lastChecked6 = null;
+
+smf1a_Checkbox.addEventListener('change', () => {
+  if (smf1a_Checkbox.checked) {
+    if (lastChecked6 && lastChecked6 !== smf2a_Checkbox) {
+      lastChecked6.checked = false;
+    }
+    lastChecked6 = smf2a_Checkbox;
+    final2Label.textContent = smf2a_Label.textContent;
+  } else {
+    final2Label.textContent = '';
+  }
+});
+
+smf2b_Checkbox.addEventListener('change', () => {
+  if (smf2b_Checkbox.checked) {
+    if (lastChecked6 && lastChecked6 !== smf2b_Checkbox) {
+      lastChecked6.checked = false;
+    }
+    lastChecked6 = smf1b_Checkbox;
+    final2Label.textContent = smf2b_Label.textContent;
+  } else {
+    final2Label.textContent = '';
+  }
+});
+</script>
+
+  <script>
+    const buttons = document.querySelectorAll('button[data-target]');
+
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener('click', function() {
+        const target = this.getAttribute('data-target');
+        const sections = document.querySelectorAll('section.fullscreen');
+        
+        for (let j = 0; j < sections.length; j++) {
+          sections[j].classList.remove('active');
+        }
+        
+        document.querySelector(target).classList.add('active');
+      });
+    }
+  </script>
+  
+<script>
+const timerDisplays = document.querySelectorAll('.timer');
+let countdowns = [];
+
+function timer(seconds, display) {
+  clearInterval(countdowns[display]);
+
+  const now = Date.now();
+  const then = now + seconds * 1000;
+  displayTimeLeft(seconds, display);
+
+  countdowns[display] = setInterval(() => {
+    const secondsLeft = Math.round((then - Date.now()) / 1000);
+
+    if (secondsLeft < 0) {
+      clearInterval(countdowns[display]);
+      return;
+    }
+
+    displayTimeLeft(secondsLeft, display);
+  }, 10);
+}
+
+function displayTimeLeft(seconds, display) {
+  const minutes = Math.floor(seconds / 60);
+  const remainderSeconds = seconds % 60;
+  const displayText = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
+  timerDisplays[display].textContent = displayText;
+}
+ 
+const startButtons = document.querySelectorAll('.timer');
+  
+function startTimer(display) {
+  const seconds = 9 * 60 + 59;
+  timer(seconds, display);
+}
+
+
+startButtons.forEach((button, index) => {
+  button.addEventListener('click', () => startTimer(index));
+});
+  
+timerDisplays.forEach(display => {
+  display.addEventListener('click', () => {
+    display.classList.add('color-change');
+  });
+});
+</script>
+
+</body>
+</html>
