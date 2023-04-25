@@ -104,6 +104,11 @@ p {
   color: #28f128;
 }
 
+label,
+input {
+  cursor: pointer;
+  padding: 2rem;
+}
 
 @media (max-width: 600px) {
     html {
