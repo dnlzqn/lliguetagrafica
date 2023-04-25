@@ -103,4 +103,8 @@ p {
     html {
         font-size: 140%;
     }
+
+    .fullscreen {
+      height: 95vh;
+    }
 }
