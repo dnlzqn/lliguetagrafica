@@ -1,11 +1,17 @@
-<html lang="ca">
-<head>
-  <meta charset="UTF-8">
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="ca"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="ca"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="ca"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ca"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lligueta gràfica</title>
-  <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <section id="section1" class="fullscreen section1 active">
@@ -126,6 +132,8 @@
   </section>
 
   <script>
+
+
 
 const equip1Checkbox = document.querySelector('#equip1');
 const equip1Label = document.querySelector('label[for="equip1"]');
@@ -301,8 +309,8 @@ const smf2b_Label = document.querySelector('label[for="semifinal2b"]');
 const final2Label = document.querySelector('label[for="final2"]');
 let lastChecked6 = null;
 
-smf1a_Checkbox.addEventListener('change', () => {
-  if (smf1a_Checkbox.checked) {
+smf2a_Checkbox.addEventListener('change', () => {
+  if (smf2a_Checkbox.checked) {
     if (lastChecked6 && lastChecked6 !== smf2a_Checkbox) {
       lastChecked6.checked = false;
     }
@@ -318,7 +326,7 @@ smf2b_Checkbox.addEventListener('change', () => {
     if (lastChecked6 && lastChecked6 !== smf2b_Checkbox) {
       lastChecked6.checked = false;
     }
-    lastChecked6 = smf1b_Checkbox;
+    lastChecked6 = smf2b_Checkbox;
     final2Label.textContent = smf2b_Label.textContent;
   } else {
     final2Label.textContent = '';
