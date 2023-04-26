@@ -32,7 +32,7 @@ button {
   position: fixed;
   padding: 2rem;
   width: 100vw;
-  height: 100dvh;
+  height: 100vh;
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -49,9 +49,8 @@ button {
 p {
   color: #fff;
   text-align: center;
-  line-height: 1em;
+  line-height: 1.1em;
   margin: 0;
-  font-family: sans-serif;
   font-size: 8rem;
 }
 
@@ -88,6 +87,7 @@ p {
 
 .titol h1 {
   margin: 0 2rem;
+  font-weight: 400;
 }
 
 .nav {
@@ -110,9 +110,139 @@ input {
   padding: 2rem;
 }
 
+.tournament-headers h3 {
+  width: 25%;
+  text-align: center;
+  font-weight: 400;
+  border-right: 1px dashed #ccc;
+  margin: 0;
+  padding: 1rem;
+}
+
+.tournament-brackets {
+  display: flex;
+  width: 100%;
+  height: 350px;
+  flex-direction: row;
+  list-style-type: none;
+  margin-bottom: 50px;
+}
+
+.bracket {
+  padding-left: 0;
+  display: flex;
+  margin: 0;
+  padding: 30px 0;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-around;
+  list-style-type: none;
+  flex: 1;
+}
+
+.team-item {
+    font-size: 2rem;
+    background-color: #f4f4f4;
+    padding: 1.5rem;
+    display: flex;
+    margin: 0.5rem 10px;
+    position: relative;
+    vertical-align: middle;
+    line-height: 1;
+    text-align: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.team-item:after {
+  content: "";
+  border-color: #bababa;
+  border-width: 2px;
+  position: absolute;
+  display: block;
+  width: 10px;
+  right: -11px;
+}
+
+.team-item:nth-of-type(odd):after {
+  border-right-style: solid;
+  border-top-style: solid;
+  height: 100%;
+  top: 50%;
+}
+
+.team-item:nth-of-type(even):after {
+  border-right-style: solid;
+  border-bottom-style: solid;
+  height: 100%;
+  top: -50%;
+}
+
+.team-item:before {
+  content: "";
+  border-top: 2px solid #bababa;
+  position: absolute;
+  height: 2px;
+  width: 10px;
+  left: -10px;
+  top: 50%;
+}
+
+.bracket-2 .team-item:nth-of-type(odd):after {
+  height: 139%;
+  top: 50%;
+}
+.bracket-2 .team-item:nth-of-type(even):after {
+  height: 140%;
+  top: -90%;
+}
+
+.bracket-3 .team-item:nth-of-type(odd):after {
+  height: 290%;
+  top: 50%;
+}
+.bracket-3 .team-item:nth-of-type(even):after {
+  height: 297%;
+  top: -240%;
+}
+
+.bracket-4 .team-item:nth-of-type(odd):after {
+  height: 700%;
+  top: 50%;
+}
+.bracket-4 .team-item:nth-of-type(even):after {
+  height: 700%;
+  top: -650%;
+}
+
+.bracket:first-of-type .team-item:before {
+  display: none;
+}
+
+.bracket-4 .team-item:after {
+  display: none;
+}
+
+/*.bracket:last-of-type .team-item:before,
+.bracket:last-of-type .team-item:after {
+  display: none;
+}*/
+
+.team-item time {
+  display: inline-block;
+  background-color: #dbdbdb;
+  font-size: 1.4rem;
+  padding: 0 0.6rem;
+}
+
 @media (max-width: 600px) {
     html {
         font-size: 40%;
+    }
+
+    .fullscreen {
+      height: 95vh;
     }
 
 }
