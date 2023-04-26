@@ -1,19 +1,19 @@
 <!doctype html>
 <!--[if lt IE 7]>
 <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="ca">
-	<![endif]-->
+    <![endif]-->
 <!--[if IE 7]>
-	<html class="no-js lt-ie9 lt-ie8" lang="ca">
-		<![endif]-->
+    <html class="no-js lt-ie9 lt-ie8" lang="ca">
+        <![endif]-->
 <!--[if IE 8]>
-		<html class="no-js lt-ie9" lang="ca">
-			<![endif]-->
+        <html class="no-js lt-ie9" lang="ca">
+            <![endif]-->
 <!--[if gt IE 8]>
-			<!-->
+            <!-->
 <html class="no-js" lang="ca">
   <!--
                 
-				<![endif]-->
+                <![endif]-->
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -497,15 +497,20 @@
       });
       // Navegación con el tap en la pantalla
       document.addEventListener('touchstart', (event) => {
-        const screenWidth = window.innerWidth;
-        if (event.touches[0].pageX < screenWidth * .25 && currentSection > 0) {
-          currentSection--;
-          showCurrentSection();
-        } else if (event.touches[0].pageX > screenWidth * .75 && currentSection < numSections - 1) {
-          currentSection++;
-          showCurrentSection();
-        }
-      });
+          const screenWidth = window.innerWidth;
+          const screenHeight = window.innerHeight;
+          const touchY = event.touches[0].pageY;
+          if (touchY > screenHeight * 0.8) {
+            return; // Do nothing if touch is in the bottom 20% of the screen
+          }
+          if (event.touches[0].pageX < screenWidth * .25 && currentSection > 0) {
+            currentSection--;
+            showCurrentSection();
+          } else if (event.touches[0].pageX > screenWidth * .75 && currentSection < numSections - 1) {
+            currentSection++;
+            showCurrentSection();
+          }
+        });
       // Mostrar la sección inicial
       showCurrentSection();
     </script>
