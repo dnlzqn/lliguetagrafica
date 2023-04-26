@@ -498,10 +498,10 @@
       // Navegación con el tap en la pantalla
       document.addEventListener('touchstart', (event) => {
         const screenWidth = window.innerWidth;
-        if (event.touches[0].pageX < screenWidth / 2 && currentSection > 0) {
+        if (event.touches[0].pageX < screenWidth * .25 && currentSection > 0) {
           currentSection--;
           showCurrentSection();
-        } else if (event.touches[0].pageX > screenWidth / 2 && currentSection < numSections - 1) {
+        } else if (event.touches[0].pageX > screenWidth * .75 && currentSection < numSections - 1) {
           currentSection++;
           showCurrentSection();
         }
